@@ -15,7 +15,7 @@ def miniMax(curDepth,nodeIndex,maxTurn,scores,targetDepth,path):
     else:
         leftScore,leftPath=miniMax(curDepth+1,nodeIndex*2,True,scores,targetDepth,path+"L->")
         rightScore,rightPath=miniMax(curDepth+1,nodeIndex*2+1,True,scores,targetDepth,path+"R->")
-        if leftScore>rightScore:
+        if leftScore<rightScore:
             return leftScore,leftPath
         else:
             return rightScore,rightPath
